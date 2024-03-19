@@ -38,17 +38,17 @@ Refer to the instructions below to install Miniconda CLI and create a Python 3.9
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
 
 1. Installation:
-  Azure CLI can be installed by following the instructions in the below links:
+    Azure CLI can be installed by following the instructions in the below links:
 
-* Windows: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update>
-* Linux: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command>
-* Mac: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos>
+    * Windows: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update>
+    * Linux: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command>
+    * Mac: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos>
 
 2. Azure CLI Login:
-  Execute the following commands once Azure CLI is installed to log in to Azure using your credentials.
+    Execute the following commands once Azure CLI is installed to log in to Azure using your credentials.
 
-    ```bash
-    az config set core.allow_broker=true
-    az account clear
-    az login
-    ```
+      ```bash
+      az config set core.allow_broker=true
+      az account clear
+      az login
+      ```
