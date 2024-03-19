@@ -25,7 +25,7 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 Python version **3.9** should be installed on the laptops used for the hack.
 Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 
-1. Install Miniconda following the documentation: <https://docs.anaconda.com/free/miniconda/#quick-command-line-install>
+1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): <https://docs.anaconda.com/free/miniconda/#quick-command-line-install>
 2. Create the conda virtual environment:
 
   ```bash
