@@ -17,7 +17,7 @@ solution. We hope you have a rewarding experience during the hack event.
 
 ## Prerequisites
 ### Operating System
-Windows and Linux are the preferred operating systems for the hack event. They’re preferred as the tools, libraries are tested in windows and linux.
+Windows and Linux are the preferred operating systems for the hack event. They’re preferred as the tools, libraries are tested in Windows and Linux. Macbooks can be used if there are no alternatives, but challenges are to be expected.
 
 ### Python Environment
 Python version **3.9** should be installed on the laptops used for the hack.
