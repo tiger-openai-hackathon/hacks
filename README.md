@@ -51,3 +51,9 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
       az account clear
       az login
       ```
+
+### VS Code
+Visual Studio Code, is a source-code IDE available for Windows, Linux and macOS.
+1. Download and install VS code from here: https://code.visualstudio.com
+2. Install the Python extension for VS Code: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
