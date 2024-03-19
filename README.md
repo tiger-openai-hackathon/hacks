@@ -28,8 +28,7 @@ Refer to the instructions below to install Miniconda CLI and create a Python 3.9
 1. Install Miniconda following the documentation: <https://docs.anaconda.com/free/miniconda/#quick-command-line-install>
 2. Create the conda virtual environment:
 
-  ```python
-    conda env create -n tiger_hack -f codes/deploy/conda.yaml
+  ```bash
     conda env create -n tiger_hack -f codes/deploy/conda.yaml
   ```
 
