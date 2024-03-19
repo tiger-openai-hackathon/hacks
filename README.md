@@ -25,35 +25,28 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 Python version **3.9** should be installed on the laptops used for the hack.
 Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 
-1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): <https://docs.anaconda.com/free/miniconda/#quick-command-line-install>
+1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
 2. Create the conda virtual environment:
 
-  ```bash
+```bash
     conda env create -n tiger_hack -f codes/deploy/conda.yaml
-  ```
+```
 
 ### Azure CLI
 
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
 
 1. Installation:
-    Azure CLI can be installed by following the instructions in the below links:
+   Azure CLI can be installed by following the instructions in the below links:
 
-    * Windows: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update>
-    * Linux: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command>
-    * Mac: <https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos>
-
+   * Windows: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update)
+   * Linux: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
+   * Mac: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
 2. Azure CLI Login:
-    Execute the following commands once Azure CLI is installed to log in to Azure using your credentials.
+   Execute the following commands once Azure CLI is installed to log in to Azure using your credentials.
 
-      ```bash
-      az config set core.allow_broker=true
-      az account clear
-      az login
-      ```
-
-### VS Code
-Visual Studio Code, is a source-code IDE available for Windows, Linux and macOS.
-1. Download and install VS code from here: https://code.visualstudio.com
-2. Install the Python extension for VS Code: https://marketplace.visualstudio.com/items?itemName=ms-python.python
-
+   ```bash
+   az config set core.allow_broker=true
+   az account clear
+   az login
+   ```
