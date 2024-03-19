@@ -20,21 +20,24 @@ solution. We hope you have a rewarding experience during the hack event.
 Windows and Linux are the preferred operating systems for the hack event. They’re preferred as the tools, libraries are tested in windows and linux.
 
 ### Python Environment
-Python version 3.9 should be installed on the laptops used for the hack. Use the link below to download and install Miniconda.
-Refer to the instructions from here to install Miniconda: https://docs.anaconda.com/free/miniconda/#quick-command-line-install
+Python version **3.9** should be installed on the laptops used for the hack.
+Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
+1. Install Miniconda CLI following the documentation: https://docs.anaconda.com/free/miniconda/#quick-command-line-install
 
-1. Create a conda virtual environment:
+2. Create a conda virtual environment:
   conda create --name hack python=3.9
-2. Install the dependencies:
+3. Install the dependencies:
    ```bash
-   pip install -r deploy/requirements.txt
+   pip install -r codes/deploy/requirements.txt
    ```
 
 ### Azure CLI
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
 
 1. Installation guide
+   
   Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update
+
   Linux: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command
 
 2. Azure CLI Login:
