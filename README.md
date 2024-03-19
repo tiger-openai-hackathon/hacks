@@ -13,3 +13,34 @@ Please feel free to reach out to the trainers during the session, for any questi
 solution. We hope you have a rewarding experience during the hack event.
 
 **Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
+
+
+## Prerequisites
+### Operating System
+Windows and Linux are the preferred operating systems for the hack event. They’re preferred as the tools, libraries are tested in windows and linux.
+
+### Python Environment
+Python version 3.9 should be installed on the laptops used for the hack. Use the link below to download and install Miniconda.
+Refer to the instructions from here to install Miniconda: https://docs.anaconda.com/free/miniconda/#quick-command-line-install
+
+1. Create a conda virtual environment:
+  conda create --name hack python=3.9
+2. Install the dependencies:
+   ```bash
+   pip install -r deploy/requirements.txt
+   ```
+
+### Azure CLI
+Azure CLI should be installed on the laptop to provide authentication to the Azure services.
+
+1. Installation guide
+  Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update
+  Linux: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command
+
+2. Azure CLI Login:
+  Execute the following commands once Azure CLI is installed to login to Azure using your credentials.
+  ```bash
+  az config set core.allow_broker=true
+  az account clear
+  az login
+  ```
