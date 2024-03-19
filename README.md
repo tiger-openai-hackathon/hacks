@@ -2,9 +2,7 @@
 
 This repository contains information (data, instructions for the workshop, and reference material) related to **Setting RAG solutioning using Azure AI services** conducted by Microsoft and Tiger Analytics.
 
-Please clone this repository to your local system or download the zip by clicking on the green **Code** button, then on the **Download Zip** button and selecting the folder to download the zip to your local machine. Once the repository gets downloaded, extract the zip file by right-clicking on the file and selecting the **Extract** button.
-
-1. The sample data that will be used during the session is available in the [data](data) folder.
+1. The sample data that will be used during the session is available in the [data](data) folder
 2. The presentation that will be used during the session is available in the [references](references/AI_Build_Presentation.pdf) folder
 3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_ai_build_steps.pdf) folder
 4. Additional references can be found in the [references](references) folder. It also contains some sample Questions that can be asked on the dataset
@@ -22,11 +20,12 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 
 ### Python Environment
 
-Python version **3.9** should be installed on the laptops used for the hack.
+Python version **3.9** needs to be installed on the local machine used for the hack.
 Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 
 1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
-2. Create the conda virtual environment:
+2. Please clone this GitHub repository to your local system or download the zip by clicking on the green **Code** button, then on the **Download Zip** button and selecting the folder to download the zip to your local machine. Once the repository gets downloaded, extract the zip file by right-clicking on the file and selecting the **Extract** button.
+3. Create the conda virtual environment by running the following command in your terminal from the repository root:
 
 ```bash
     conda env create -n tiger_hack -f codes/deploy/conda.yaml
@@ -43,7 +42,7 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    * Linux: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
    * Mac: [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
 2. Azure CLI Login:
-   Execute the following commands once Azure CLI is installed to log in to Azure using your credentials.
+   Execute the following commands in Powershell once Azure CLI is installed to log in to Azure using your credentials.
 
    ```bash
    az config set core.allow_broker=true
