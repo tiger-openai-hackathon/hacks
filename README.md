@@ -36,9 +36,8 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 
 1. Installation guide
    
-  Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update
-
-  Linux: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command
+  * Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli#install-or-update
+  * Linux: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command
 
 2. Azure CLI Login:
   Execute the following commands once Azure CLI is installed to login to Azure using your credentials.
