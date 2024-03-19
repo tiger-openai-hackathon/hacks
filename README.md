@@ -1,6 +1,6 @@
 # Tiger Analytics - Azure OpenAI Hackathon
 
-This repository contains information (data, instructions for the workshop, and reference material) related to **Setting RAG solutioning using Azure AI services** conducted by Microsoft and Tiger Analytics.
+Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with Tiger Analytics. This repository contains information (data, instructions for the workshop, and reference material) related to **Setting RAG solutioning using Azure AI services** conducted by Microsoft and Tiger Analytics.
 
 1. The sample data that will be used during the session is available in the [data](data) folder
 2. The presentation that will be used during the session is available in the [references](references/AI_Build_Presentation.pdf) folder
