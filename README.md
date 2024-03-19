@@ -24,12 +24,8 @@ Python version **3.9** should be installed on the laptops used for the hack.
 Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 1. Install Miniconda CLI following the documentation: https://docs.anaconda.com/free/miniconda/#quick-command-line-install
 
-2. Create a conda virtual environment:
-  conda create --name hack python=3.9
-3. Install the dependencies:
-   ```bash
-   pip install -r codes/deploy/requirements.txt
-   ```
+2. Create the conda virtual environment:
+  conda env create -n hack -f codes/deploy/conda.yaml
 
 ### Azure CLI
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
