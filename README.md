@@ -50,3 +50,7 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az account clear
    az login
    ```
+
+
+## Additional References
+-  [aistudio-copilot-sample](https://github.com/Azure/aistudio-copilot-sample)
