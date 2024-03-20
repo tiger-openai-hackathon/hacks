@@ -5,7 +5,7 @@ Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with
 1. The sample data that will be used during the session is available in the [data](data) folder
 2. The presentation that will be used during the session is available in the [references](references/TA_presentation.pdf) folder
 3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_hack_steps_ai_studio.pdf) folder
-4. Additional references can be found in the [references](references) folder. It also contains some sample prompts, and questions that can be asked on the dataset.
+4. Additional references can be found in the [references](references) folder. It also contains some sample prompts and questions that can be asked on the dataset.
 
 Please feel free to reach out to the trainers during the session, for any questions or issues related to access or the
 solution. We hope you have a rewarding experience during the hack event.
@@ -47,6 +47,31 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az login
    ```
 
+## Update the configuration files
+
+1. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
+2. Populate AI Studio project variables in [config.json](codes/config.json)
+
+## Run the notebook
+
+1. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
+2. Click on Select Kernel and select `tiger_hack` virtual environment
+3. Run the cells in the notebook
+
+## UI
+
+1. The code from the notebook is also available as a Python package. Install the package using the command
+
+   ``` bash
+   pip install -e codes/
+   ```
+
+2. The web chatbot can be launched using the following command.
+
+   ``` bash
+   streamlit run codes/src/rag_ai_studio/app.py
+   ```
+
 We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](UPDATE LINK). You can also scan the QR code below to provide your feedback:
 
 [![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
@@ -56,27 +81,3 @@ We greatly value your feedback and welcome any suggestions for improvement. Plea
 * [Refer to this GitHub repository](https://github.com/Azure/aistudio-copilot-sample)
 
 **Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
-
-
-
-## Update the configuration files
-
-1. Populate relevant environment variables in `configs/environment_variables.env`
-2. Populate AI Studio project variables in `config.json`
-
-## Run the notebook
-
-Open the notebook from `codes/notebooks/End to End.ipynb`
-
-## UI
-
-1. The code from the notebook is also available as a python package. Install the package using the command
-```
-pip install -e codes/
-```
-
-2. The web chat bot can be launched using the following command.
-
-```
-streamlit run codes/src/rag_ai_studio/app.py
-```
