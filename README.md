@@ -18,8 +18,7 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 
 ### Python Environment
 
-Python version **3.9** needs to be installed on the local machine used for the hack.
-Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
+Python version **3.9** needs to be installed on the local machine used for the hack. Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 
 1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
 2. Please clone this GitHub repository to your local system or download the zip by clicking on the green **Code** button, then on the **Download Zip** button and selecting the folder to download the zip to your local machine. Once the repository gets downloaded, extract the zip file by right-clicking on the file and selecting the **Extract** button.
@@ -53,6 +52,7 @@ We greatly value your feedback and welcome any suggestions for improvement. Plea
 [![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
 
 ## Additional References
--  [Refer to this github repository](https://github.com/Azure/aistudio-copilot-sample)
+
+* [Refer to this GitHub repository](https://github.com/Azure/aistudio-copilot-sample)
 
 **Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
