@@ -27,6 +27,6 @@ setup(
     description="DS Innovation - NLP",
     author="Tiger Analytics",
     packages=PEP420PackageFinder.find(where=str(SRC)),
-    python_requires=">=3.10.13",
+    python_requires=">=3.9",
     install_requires=install_reqs,
 )
