@@ -56,3 +56,27 @@ We greatly value your feedback and welcome any suggestions for improvement. Plea
 * [Refer to this GitHub repository](https://github.com/Azure/aistudio-copilot-sample)
 
 **Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
+
+
+
+## Update the configuration files
+
+1. Populate relevant environment variables in `configs/environment_variables.env`
+2. Populate AI Studio project variables in `config.json`
+
+## Run the notebook
+
+Open the notebook from `codes/notebooks/End to End.ipynb`
+
+## UI
+
+1. The code from the notebook is also available as a python package. Install the package using the command
+```
+pip install -e codes/
+```
+
+2. The web chat bot can be launched using the following command.
+
+```
+streamlit run codes/src/rag_ai_studio/app.py
+```
