@@ -5,7 +5,7 @@ Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with
 1. The sample data that will be used during the session is available in the [data](data) folder
 2. The presentation that will be used during the session is available in the [references](references/TA_presentation.pdf) folder
 3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_hack_steps_ai_studio.pdf) folder
-4. Additional references can be found in the [references](references) folder. It also contains some sample Questions that can be asked on the dataset
+4. Additional references can be found in the [references](references) folder. It also contains some sample prompts, and questions that can be asked on the dataset.
 
 Please feel free to reach out to the trainers during the session, for any questions or issues related to access or the
 solution. We hope you have a rewarding experience during the hack event.
