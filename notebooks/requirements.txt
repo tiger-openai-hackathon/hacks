@@ -1,9 +1,0 @@
-python-dotenv
-azure-search-documents==11.6.0b2
-azure-identity
-openai
-azure-ai-documentintelligence
-tiktoken
-pypdf
-langchain
-langchain_openai
