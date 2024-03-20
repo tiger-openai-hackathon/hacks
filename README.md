@@ -72,9 +72,9 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    streamlit run codes/src/rag_ai_studio/app.py
    ```
 
-We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](UPDATE LINK). You can also scan the QR code below to provide your feedback:
+We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/058CMXnXu6). You can also scan the QR code below to provide your feedback:
 
-[![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
+[![feedback form](codes/images/README/feedback.png "Feedback form")](https://forms.office.com/r/058CMXnXu6)
 
 ## Additional References
 
