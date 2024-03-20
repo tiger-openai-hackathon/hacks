@@ -3,8 +3,8 @@
 Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with Tiger Analytics. This repository contains information (data, instructions for the workshop, and reference material) related to **Setting RAG solutioning using Azure AI services** conducted by Microsoft and Tiger Analytics.
 
 1. The sample data that will be used during the session is available in the [data](data) folder
-2. The presentation that will be used during the session is available in the [references](references/AI_Build_Presentation.pdf) folder
-3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_ai_build_steps.pdf) folder
+2. The presentation that will be used during the session is available in the [references](references/TA_presentation.pdf) folder
+3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_hack_steps_ai_studio.pdf) folder
 4. Additional references can be found in the [references](references) folder. It also contains some sample Questions that can be asked on the dataset
 
 Please feel free to reach out to the trainers during the session, for any questions or issues related to access or the
