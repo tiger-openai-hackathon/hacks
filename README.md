@@ -48,14 +48,11 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az login
    ```
 
-<<<<<<< HEAD
-
-## Additional References
--  [aistudio-copilot-sample](https://github.com/Azure/aistudio-copilot-sample)
-=======
 We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](UPDATE LINK). You can also scan the QR code below to provide your feedback:
 
 [![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
 
+## Additional References
+-  [Refer to this github repository](https://github.com/Azure/aistudio-copilot-sample)
+
 **Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
->>>>>>> 30fed121603d8a457b7e877dd426cba396794504
