@@ -28,6 +28,12 @@ Python version **3.9** needs to be installed on the local machine used for the h
     conda env create -n tiger_hack -f codes/deploy/conda.yaml
 ```
 
+### VSCode
+
+1. If you already have an IDE setup in your system, you can skip this section
+2. Install VSCode from [this website](https://code.visualstudio.com/download)
+3. Install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions from the VSCode marketplace
+
 ### Azure CLI
 
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
