@@ -28,14 +28,14 @@ def build_cogsearch_index(
     default_aoai_connection.set_current_environment()
 
     default_acs_connection = client.connections.get(
-        os.environ.get("AZURE_AI_COGNITIVE_SEARCH_CONNECTION_NAME", "")
+        os.environ.get("AZURE_COGNITIVE_SEARCH_CONNECTION_NAME", "")
     )
     default_acs_connection.set_current_environment()
 
     # Use the same index name when registering the index in AI Studio
     index = build_index(
         output_index_name=index_name,
-        vector_store=os.environ.get("VECTOR_STORE", ""),
+        vector_store="azure_cognitive_search",
         embeddings_model=f"azure_open_ai://deployment/{os.environ.get('AZURE_OPENAI_EMBEDDING_DEPLOYMENT')}/model/{os.environ.get('AZURE_OPENAI_EMBEDDING_MODEL')}",
         data_source_url=data_source_url,
         index_input_config=LocalSource(input_data=path_to_data),
