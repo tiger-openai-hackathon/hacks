@@ -10,8 +10,6 @@ Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with
 Please feel free to reach out to the trainers during the session, for any questions or issues related to access or the
 solution. We hope you have a rewarding experience during the hack event.
 
-**Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
-
 ## Prerequisites
 
 ### Operating System
@@ -49,3 +47,9 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az account clear
    az login
    ```
+
+We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](UPDATE LINK). You can also scan the QR code below to provide your feedback:
+
+[![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
+
+**Note**: The Azure service accesses used in this event are only valid during the event. Please contact your respective Microsoft account teams to follow up on the continued access or further questions.
