@@ -5,7 +5,7 @@ Welcome to the Azure OpenAI hackathon organized by Microsoft in partnership with
 1. The sample data that will be used during the session is available in the [data](data) folder
 2. The presentation that will be used during the session is available in the [references](references/TA_presentation.pdf) folder
 3. Detailed instructions to follow during the session are available in the [instructions](instructions/ms_hack_steps_ai_studio.pdf) folder
-4. Additional references can be found in the [references](references) folder. It also contains some sample prompts, and questions that can be asked on the dataset.
+4. Additional references can be found in the [references](references) folder. It also contains some sample prompts and questions that can be asked on the dataset.
 
 Please feel free to reach out to the trainers during the session, for any questions or issues related to access or the
 solution. We hope you have a rewarding experience during the hack event.
@@ -28,6 +28,12 @@ Python version **3.9** needs to be installed on the local machine used for the h
     conda env create -n tiger_hack -f codes/deploy/conda.yaml
 ```
 
+### VSCode
+
+1. If you already have an IDE setup in your system, you can skip this section
+2. Install VSCode from [this website](https://code.visualstudio.com/download)
+3. Install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions from the VSCode marketplace
+
 ### Azure CLI
 
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
@@ -47,9 +53,34 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az login
    ```
 
-We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](UPDATE LINK). You can also scan the QR code below to provide your feedback:
+## Update the configuration files
 
-[![feedback form](codes/images/README/feedback.png "Feedback form")](UPDATE LINK)
+1. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
+2. Populate AI Studio project variables in [config.json](codes/config.json)
+
+## Run the notebook
+
+1. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
+2. Click on Select Kernel and select `tiger_hack` virtual environment
+3. Run the cells in the notebook
+
+## UI
+
+1. The code from the notebook is also available as a Python package. Install the package using the command
+
+   ``` bash
+   pip install -e codes/
+   ```
+
+2. The web chatbot can be launched using the following command.
+
+   ``` bash
+   streamlit run codes/src/rag_ai_studio/app.py
+   ```
+
+We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/058CMXnXu6). You can also scan the QR code below to provide your feedback:
+
+[![feedback form](codes/images/README/feedback.png "Feedback form")](https://forms.office.com/r/058CMXnXu6)
 
 ## Additional References
 
