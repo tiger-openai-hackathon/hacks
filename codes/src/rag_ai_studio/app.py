@@ -55,15 +55,6 @@ if "submit_feedback_state" not in st.session_state:
 if "document_table" not in st.session_state:
     st.session_state["document_table"] = ""
 
-if "Temperature" not in st.session_state:
-    st.session_state["Temperature"] = st.session_state['model_config']["model"]["temperature"]
-
-if "Max Token" not in st.session_state:
-    st.session_state["Max Token"] = st.session_state['model_config']["model"]["max_tokens"]
-
-if "Summarize Prompt" not in st.session_state:
-    st.session_state["Summarize Prompt"] = st.session_state['model_config']["prompt"]["user_prompt"]
-
 
 def disable_submit():
     # call when we click on user query submit button
@@ -119,30 +110,30 @@ def main_func():
             min_value=0.0,
             max_value=1.0,
             step=0.1,
-            value=st.session_state['Temperature']
+            value=st.session_state['model_config']["model"]["temperature"]
         )
         max_token = st.slider(
             "Select max Token",
             min_value=0, 
             max_value=5000, 
             step=500, 
-            value=st.session_state['Max Token']
+            value=st.session_state['model_config']["model"]["max_tokens"]
         )
         summarize_prompt = st.text_area(
             label="Summarize Prompt",
-            value=st.session_state["Summarize Prompt"],
+            value=st.session_state['model_config']["prompt"]["user_prompt"],
             placeholder="Please provide a summarize prompt:",
         )
         if temperature:
-            st.session_state["Temperature"] = temperature
+            st.session_state['model_config']["model"]["temperature"] = temperature
         if max_token:
-            st.session_state["Max Token"] = max_token
+            st.session_state['model_config']["model"]["max_tokens"] = max_token
         if summarize_prompt:
             if not ("{question}" in summarize_prompt and "{context}" in summarize_prompt):
                 postfix = "\n\nQuestion:'{question}' \n\nContext: '{context}'"
             else:
                 postfix = ""
-            st.session_state["Summarize Prompt"] = (
+            st.session_state['model_config']["prompt"]["user_prompt"] = (
                 summarize_prompt
                 + postfix
             )
