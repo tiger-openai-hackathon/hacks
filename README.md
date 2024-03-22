@@ -69,7 +69,7 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 2. Click on Select Kernel and select `tiger_hack` virtual environment
 3. Run the cells in the notebook
 
-## UI
+## Launch the Chatbot
 
 1. The code from the notebook is also available as a Python package. Install the package using the command
 
