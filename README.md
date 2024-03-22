@@ -53,6 +53,11 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
    az login
    ```
 
+### Java
+
+1. If you already have Java installed in your system, you can skip this step
+2. Please download and install Java by following the instructions given on [this website](https://www.java.com/en/download/help/download_options.html#windows)
+
 ## Update the configuration files
 
 1. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
