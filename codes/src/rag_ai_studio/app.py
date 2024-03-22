@@ -2,15 +2,67 @@ import streamlit as st
 import yaml
 from dotenv import load_dotenv
 from rag_ai_studio.chat import chat_completion
+load_dotenv("configs/environment_variables.env")
+
+# set streamlit-chat very first intial message in chat history
+def get_initial_message():
+    messages = [
+        {
+            "role": "system",
+            "content": "You are a helpful AI Tutor. Who anwers brief questions about CA documents.",
+        }
+    ]
+    return messages
+
 
 st.set_page_config(
     page_title="Ask me Anything", layout="wide", page_icon="images/favicon.png"
 )
 
-with open("configs/user_config.yaml") as f:
-    model_config = yaml.safe_load(f)
+if "model_config" not in st.session_state:
+    with open("configs/user_config.yaml") as f:
+        model_config = yaml.safe_load(f)
+    st.session_state['model_config']=model_config
 
-load_dotenv("configs/environment_variables.env")
+# Initialize all session state veriables
+if "submit_disabled" not in st.session_state:
+    st.session_state.submit_disabled = False
+
+if "disable_text_area" not in st.session_state:
+    st.session_state.disable_text_area = False
+
+if "track_redio_feedback" not in st.session_state:
+    st.session_state["track_redio_feedback"] = False
+
+if "generated" not in st.session_state:
+    st.session_state["generated"] = []
+
+if "past" not in st.session_state:
+    st.session_state["past"] = []
+
+if "messages" not in st.session_state:
+    st.session_state["messages"] = get_initial_message()
+
+if "latency_time" not in st.session_state:
+    st.session_state["latency_time"] = [0, 0]
+
+if "query_timestamp" not in st.session_state:
+    st.session_state["query_timestamp"] = ""
+
+if "submit_feedback_state" not in st.session_state:
+    st.session_state["submit_feedback_state"] = False
+
+if "document_table" not in st.session_state:
+    st.session_state["document_table"] = ""
+
+if "Temperature" not in st.session_state:
+    st.session_state["Temperature"] = st.session_state['model_config']["model"]["temperature"]
+
+if "Max Token" not in st.session_state:
+    st.session_state["Max Token"] = st.session_state['model_config']["model"]["max_tokens"]
+
+if "Summarize Prompt" not in st.session_state:
+    st.session_state["Summarize Prompt"] = st.session_state['model_config']["prompt"]["user_prompt"]
 
 
 def disable_submit():
@@ -52,15 +104,6 @@ st.sidebar.write(
 )
 
 
-# set streamlit-chat very first intial message in chat history
-def get_initial_message():
-    messages = [
-        {
-            "role": "system",
-            "content": "You are a helpful AI Tutor. Who anwers brief questions about CA documents.",
-        }
-    ]
-    return messages
 
 
 def update_chat(messages, role, content):
@@ -69,150 +112,114 @@ def update_chat(messages, role, content):
 
 
 def main_func():
-    try:
-
-        # Initialize all session state veriables
-        if "submit_disabled" not in st.session_state:
-            st.session_state.submit_disabled = False
-
-        if "disable_text_area" not in st.session_state:
-            st.session_state.disable_text_area = False
-
-        if "track_redio_feedback" not in st.session_state:
-            st.session_state["track_redio_feedback"] = False
-
-        if "generated" not in st.session_state:
-            st.session_state["generated"] = []
-
-        if "past" not in st.session_state:
-            st.session_state["past"] = []
-
-        if "messages" not in st.session_state:
-            st.session_state["messages"] = get_initial_message()
-
-        if "latency_time" not in st.session_state:
-            st.session_state["latency_time"] = [0, 0]
-
-        if "query_timestamp" not in st.session_state:
-            st.session_state["query_timestamp"] = ""
-
-        if "submit_feedback_state" not in st.session_state:
-            st.session_state["submit_feedback_state"] = False
-
-        if "document_table" not in st.session_state:
-            st.session_state["document_table"] = ""
-
-        with st.sidebar:
-
-            # print(top_k)
-
-            temperature = st.slider(
-                "Select Temperature",
-                min_value=0.0,
-                max_value=1.0,
-                step=0.1,
-                value=0.2,
-            )
-
-            max_token = st.slider(
-                "Select max Token", min_value=0, max_value=5000, step=500, value=350
-            )
-
-            summarize_prompt = st.text_area(
-                label="Summarize Prompt",
-                value=model_config["prompt"]["user_prompt"],
-                placeholder="Please provide a summarize prompt:",
-            )
-
-            if temperature:
-                model_config["model"]["temperature"] = temperature
-            if max_token:
-                model_config["model"]["max_tokens"] = max_token
-            if summarize_prompt:
-                model_config["prompt"]["user_prompt"] = (
-                    summarize_prompt
-                    + "\n\nQuestion:'{question}' \n\nContext: '{context}'"
-                )
-
-            st.session_state["Temperature"] = model_config["model"]["temperature"]
-            st.session_state["Max token"] = model_config["model"]["max_tokens"]
-            st.session_state["Summarize Prompt"] = model_config["prompt"]["user_prompt"]
-
-        query = st.chat_input(
-            "Enter your queries on openai search engine!",
+    # Sidebar options
+    with st.sidebar:
+        temperature = st.slider(
+            "Select Temperature",
+            min_value=0.0,
+            max_value=1.0,
+            step=0.1,
+            value=st.session_state['Temperature']
         )
+        max_token = st.slider(
+            "Select max Token",
+            min_value=0, 
+            max_value=5000, 
+            step=500, 
+            value=st.session_state['Max Token']
+        )
+        summarize_prompt = st.text_area(
+            label="Summarize Prompt",
+            value=st.session_state["Summarize Prompt"],
+            placeholder="Please provide a summarize prompt:",
+        )
+        if temperature:
+            st.session_state["Temperature"] = temperature
+        if max_token:
+            st.session_state["Max Token"] = max_token
+        if summarize_prompt:
+            if not ("{question}" in summarize_prompt and "{context}" in summarize_prompt):
+                postfix = "\n\nQuestion:'{question}' \n\nContext: '{context}'"
+            else:
+                postfix = ""
+            st.session_state["Summarize Prompt"] = (
+                summarize_prompt
+                + postfix
+            )
 
-        st.write("---")
+    # Displaying old messages
+    with st.spinner("generating..."):
+        messages = st.session_state["messages"]
+        # messages = update_chat(messages, "user", query)
+        for message_ in messages:
+            if message_["role"]=="user":
+                with st.chat_message("user"):
+                    st.markdown(message_['content'])
+            if message_['role']=="assistant":
+                result = message_['content']
+                answer = result["choices"][0]["message"]["content"]
+                contexts = result["choices"][0]["context"]["contexts"]
+                with st.chat_message("assistant"):
+                    st.markdown(answer)
+                    for idx, context in enumerate(contexts):
+                        with st.expander(label=f"Reference {idx+1}"):
+                            st.write(context)
 
-        # if submit_button or st.session_state.submit_disabled:
-        if query is not None:
-            # check if query value is not empty
-            if query != "":
+    # Interacting with current query
+    query = st.chat_input(
+        "Enter your queries on openai search engine!",
+    )
+    if query is not None:
+        if query != "":
+            # Resetting session state
+            st.session_state["track_redio_feedback"] = False
+            st.session_state["submit_feedback_state"] = False
+            # Get response
+            result = chat_completion(
+                question=query,
+                system_role=st.session_state['model_config']["prompt"]["system_role"],
+                user_prompt=st.session_state['model_config']["prompt"]["user_prompt"],
+                index_name=st.session_state['model_config']["rag"]["index_name"],
+                num_docs=st.session_state['model_config']["rag"]["num_docs"],
+                temperature=st.session_state['model_config']["model"]["temperature"],
+                max_tokens=st.session_state['model_config']["model"]["max_tokens"],
+            )
+            # Appending message
+            messages = update_chat(messages, "user", query)
+            messages = update_chat(messages, "assistant", result)
+            st.session_state['messages']=messages
+            answer = result["choices"][0]["message"]["content"]
+            contexts = result["choices"][0]["context"]["contexts"]
+            with st.chat_message("user"):
+                st.markdown(query)
+            with st.chat_message("assistant"):
+                st.markdown(answer)
+                for idx, context in enumerate(contexts):
+                    with st.expander(label=f"Reference {idx+1}"):
+                        st.write(context)
 
-                # change session state value for recoding feedback
-                st.session_state["track_redio_feedback"] = False
-                st.session_state["submit_feedback_state"] = False
-
-                # update the chat history when user enter new message
-                with st.spinner("generating..."):
-                    messages = st.session_state["messages"]
-                    # messages = update_chat(messages, "user", query)
-                    with st.chat_message("user"):
-                        st.markdown(query)
-
-                    # Extract the keywords from NLP query
-                    # print(model_config)
-
-                    result = chat_completion(
-                        question=query,
-                        system_role=model_config["prompt"]["system_role"],
-                        user_prompt=model_config["prompt"]["user_prompt"],
-                        index_name=model_config["rag"]["index_name"],
-                        num_docs=model_config["rag"]["num_docs"],
-                        temperature=model_config["model"]["temperature"],
-                        max_tokens=model_config["model"]["max_tokens"],
-                    )
-
-                    answer = result["choices"][0]["message"]["content"]
-                    contexts = result["choices"][0]["context"]["contexts"]
-                    with st.chat_message("assistant"):
-                        st.markdown(answer)
-                        for idx, context in enumerate(contexts):
-                            with st.expander(label=f"Reference {idx+1}"):
-                                st.write(context)
-
-                    with st.form("current_form"):
-                        col1, col2 = st.columns([3, 1])
-                        with col1:
-                            feedback_message = "Don't forget to log your feedback for each query using the 👍 or 👎"
-                            st.markdown(feedback_message, unsafe_allow_html=True)
-                        with col2:
-                            c1, c2 = st.columns(2)
-                            with c1:
-                                thumbs_up = "Thumbs_up"
-                                emo = "👍"
-                                st.form_submit_button(
-                                    emo,
-                                    # on_click=record_short_feedback,
-                                    args=(thumbs_up,),
-                                )  # #5
-                            with c2:
-                                thumbs_down = "Thumbs_down"
-                                emo = "👎"
-                                st.form_submit_button(
-                                    emo,
-                                    # on_click=record_short_feedback,
-                                    args=(thumbs_down,),
-                                )  # #5
-                    # response = get_response(query)
-                    # print(response)
-
-                    # st.markdown(response)
-                    messages = update_chat(messages, "assistant", result)
-                    st.session_state.past.append(query)
-                    st.session_state.generated.append(result)
-    except Exception as e:
-        st.markdown(e)
-
+            with st.form("current_form"):
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    feedback_message = "Don't forget to log your feedback for each query using the 👍 or 👎"
+                    st.markdown(feedback_message, unsafe_allow_html=True)
+                with col2:
+                    c1, c2 = st.columns(2)
+                    with c1:
+                        thumbs_up = "Thumbs_up"
+                        emo = "👍"
+                        st.form_submit_button(
+                            emo,
+                            # on_click=record_short_feedback,
+                            args=(thumbs_up,),
+                        ) 
+                    with c2:
+                        thumbs_down = "Thumbs_down"
+                        emo = "👎"
+                        st.form_submit_button(
+                            emo,
+                            # on_click=record_short_feedback,
+                            args=(thumbs_down,),
+                        ) 
 
 main_func()
