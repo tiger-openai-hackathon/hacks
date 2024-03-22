@@ -6,7 +6,7 @@ prompt:
     Question: {question}
     If you are unable to answer based on the given context, please say "I don't know".
 rag:
-  index_name: ""
+  index_name: "ytl_plr_sample"
   chunk_size: 300
   chunk_overlap: 20
   num_docs: 5

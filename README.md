@@ -80,7 +80,8 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 2. The web chatbot can be launched using the following command.
 
    ``` bash
-   streamlit run codes/src/rag_ai_studio/app.py
+   cd codes
+   streamlit run src/rag_ai_studio/app.py
    ```
 
 We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/058CMXnXu6). You can also scan the QR code below to provide your feedback:
