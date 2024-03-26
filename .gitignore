@@ -168,3 +168,5 @@ cython_debug/
 
 codes/configs/environment_variables.env
 codes/config.json
+
+**/MLIndex
