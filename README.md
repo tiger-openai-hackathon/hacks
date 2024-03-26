@@ -13,7 +13,8 @@ solution. We hope you have a rewarding experience during the hack event.
 ## Prerequisites
 
 ### Azure Account
-An Azure account is necessary for resources provided in the code. You can use your organization's Azure account if available. If not create one from here: https://azure.microsoft.com/en-us/free/
+
+An Azure account is necessary for resources provided in the code. You can use your organization's Azure account if available. If not create one from here: <https://azure.microsoft.com/en-us/free/>
 
 ### Operating System
 
@@ -90,6 +91,8 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/058CMXnXu6). You can also scan the QR code below to provide your feedback:
 
 [![feedback form](codes/images/README/feedback.png "Feedback form")](https://forms.office.com/r/058CMXnXu6)
+
+If you have any questions, please feel free to get in touch with us at <tigernlp@tigeranalytics.com>
 
 ## Additional References
 
