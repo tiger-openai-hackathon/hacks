@@ -12,6 +12,9 @@ solution. We hope you have a rewarding experience during the hack event.
 
 ## Prerequisites
 
+### Azure Account
+An Azure account is necessary for resources provided in the code. You can use your organization's Azure account if available. If not create one from here: https://azure.microsoft.com/en-us/free/
+
 ### Operating System
 
 Windows and Linux are the preferred operating systems for the hack event. They're preferred as the tools and libraries are tested in Windows and Linux. Macbooks can be used if there are no alternatives, but challenges are to be expected.
