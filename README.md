@@ -29,7 +29,7 @@ Python version **3.9** needs to be installed on the local machine used for the h
 3. Create the conda virtual environment by running the following command in your terminal from the repository root:
 
 ```bash
-    conda env create -n tiger_hack -f codes/deploy/conda.yaml
+conda env create -n tiger_hack -f codes/deploy/conda.yaml
 ```
 
 ### VSCode
