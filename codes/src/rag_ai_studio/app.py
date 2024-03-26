@@ -2,7 +2,9 @@ import streamlit as st
 import yaml
 from dotenv import load_dotenv
 from rag_ai_studio.chat import chat_completion
+
 load_dotenv("configs/environment_variables.env")
+
 
 # set streamlit-chat very first intial message in chat history
 def get_initial_message():
@@ -22,17 +24,17 @@ st.set_page_config(
 if "model_config" not in st.session_state:
     with open("configs/user_config.yaml") as f:
         model_config = yaml.safe_load(f)
-    st.session_state['model_config']=model_config
+    st.session_state["model_config"] = model_config
 
-# Initialize all session state veriables
+# Initialize all session state variables
 if "submit_disabled" not in st.session_state:
     st.session_state.submit_disabled = False
 
 if "disable_text_area" not in st.session_state:
     st.session_state.disable_text_area = False
 
-if "track_redio_feedback" not in st.session_state:
-    st.session_state["track_redio_feedback"] = False
+if "track_radio_feedback" not in st.session_state:
+    st.session_state["track_radio_feedback"] = False
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
@@ -95,8 +97,6 @@ st.sidebar.write(
 )
 
 
-
-
 def update_chat(messages, role, content):
     messages.append({"role": role, "content": content})
     return messages
@@ -110,32 +110,33 @@ def main_func():
             min_value=0.0,
             max_value=1.0,
             step=0.1,
-            value=st.session_state['model_config']["model"]["temperature"]
+            value=st.session_state["model_config"]["model"]["temperature"],
         )
         max_token = st.slider(
             "Select max Token",
-            min_value=0, 
-            max_value=5000, 
-            step=500, 
-            value=st.session_state['model_config']["model"]["max_tokens"]
+            min_value=0,
+            max_value=5000,
+            step=500,
+            value=st.session_state["model_config"]["model"]["max_tokens"],
         )
         summarize_prompt = st.text_area(
             label="Summarize Prompt",
-            value=st.session_state['model_config']["prompt"]["user_prompt"],
+            value=st.session_state["model_config"]["prompt"]["user_prompt"],
             placeholder="Please provide a summarize prompt:",
         )
         if temperature:
-            st.session_state['model_config']["model"]["temperature"] = temperature
+            st.session_state["model_config"]["model"]["temperature"] = temperature
         if max_token:
-            st.session_state['model_config']["model"]["max_tokens"] = max_token
+            st.session_state["model_config"]["model"]["max_tokens"] = max_token
         if summarize_prompt:
-            if not ("{question}" in summarize_prompt and "{context}" in summarize_prompt):
+            if not (
+                "{question}" in summarize_prompt and "{context}" in summarize_prompt
+            ):
                 postfix = "\n\nQuestion:'{question}' \n\nContext: '{context}'"
             else:
                 postfix = ""
-            st.session_state['model_config']["prompt"]["user_prompt"] = (
-                summarize_prompt
-                + postfix
+            st.session_state["model_config"]["prompt"]["user_prompt"] = (
+                summarize_prompt + postfix
             )
 
     # Displaying old messages
@@ -143,11 +144,11 @@ def main_func():
         messages = st.session_state["messages"]
         # messages = update_chat(messages, "user", query)
         for message_ in messages:
-            if message_["role"]=="user":
+            if message_["role"] == "user":
                 with st.chat_message("user"):
-                    st.markdown(message_['content'])
-            if message_['role']=="assistant":
-                result = message_['content']
+                    st.markdown(message_["content"])
+            if message_["role"] == "assistant":
+                result = message_["content"]
                 answer = result["choices"][0]["message"]["content"]
                 contexts = result["choices"][0]["context"]["contexts"]
                 with st.chat_message("assistant"):
@@ -163,22 +164,22 @@ def main_func():
     if query is not None:
         if query != "":
             # Resetting session state
-            st.session_state["track_redio_feedback"] = False
+            st.session_state["track_radio_feedback"] = False
             st.session_state["submit_feedback_state"] = False
             # Get response
             result = chat_completion(
                 question=query,
-                system_role=st.session_state['model_config']["prompt"]["system_role"],
-                user_prompt=st.session_state['model_config']["prompt"]["user_prompt"],
-                index_name=st.session_state['model_config']["rag"]["index_name"],
-                num_docs=st.session_state['model_config']["rag"]["num_docs"],
-                temperature=st.session_state['model_config']["model"]["temperature"],
-                max_tokens=st.session_state['model_config']["model"]["max_tokens"],
+                system_role=st.session_state["model_config"]["prompt"]["system_role"],
+                user_prompt=st.session_state["model_config"]["prompt"]["user_prompt"],
+                index_name=st.session_state["model_config"]["rag"]["index_name"],
+                num_docs=st.session_state["model_config"]["rag"]["num_docs"],
+                temperature=st.session_state["model_config"]["model"]["temperature"],
+                max_tokens=st.session_state["model_config"]["model"]["max_tokens"],
             )
             # Appending message
             messages = update_chat(messages, "user", query)
             messages = update_chat(messages, "assistant", result)
-            st.session_state['messages']=messages
+            st.session_state["messages"] = messages
             answer = result["choices"][0]["message"]["content"]
             contexts = result["choices"][0]["context"]["contexts"]
             with st.chat_message("user"):
@@ -203,7 +204,7 @@ def main_func():
                             emo,
                             # on_click=record_short_feedback,
                             args=(thumbs_up,),
-                        ) 
+                        )
                     with c2:
                         thumbs_down = "Thumbs_down"
                         emo = "👎"
@@ -211,6 +212,7 @@ def main_func():
                             emo,
                             # on_click=record_short_feedback,
                             args=(thumbs_down,),
-                        ) 
+                        )
+
 
 main_func()
