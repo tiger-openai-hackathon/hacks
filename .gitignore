@@ -166,5 +166,5 @@ cython_debug/
 
 ## Config files
 
-codes/configs
+codes/configs/environment_variables.env
 codes/config.json
