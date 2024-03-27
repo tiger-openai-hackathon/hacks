@@ -1,6 +1,6 @@
 import io
-import os
 import os.path as op
+import platform
 
 from setuptools import PEP420PackageFinder  # isort: skip
 from distutils.core import setup  # isort: skip
@@ -11,9 +11,15 @@ SRC = op.join(ROOT, "src")
 
 
 def get_install_req():
-    with io.open("deploy/requirements.txt") as fh:
-        install_reqs = fh.read()
-    install_reqs = [l for l in install_reqs.split("\n") if len(l) > 1]
+    # For MacOS
+    if platform.system() == "Darwin":
+        with io.open("deploy/requirements_mac.txt") as fh:
+            install_reqs = fh.read()
+    # For Windows and Linux
+    else:
+        with io.open("deploy/requirements.txt") as fh:
+            install_reqs = fh.read()
+    install_reqs = [req for req in install_reqs.split("\n") if len(req) > 1]
     return install_reqs
 
 
