@@ -7,5 +7,6 @@
       "installJupyterlab": "true"
     },
     "ghcr.io/devcontainers/features/java:1": {}
-  }
+  },
+  "postCreateCommand": "pip install -r /workspaces/codes/deploy/requirements.txt"
 }
