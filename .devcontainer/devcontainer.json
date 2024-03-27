@@ -8,5 +8,6 @@
     },
     "ghcr.io/devcontainers/features/java:1": {}
   },
+  "ghcr.io/devcontainers-contrib/features/vscode-cli:1": {},
   "postCreateCommand": "pip install -r /workspaces/codes/deploy/requirements.txt"
 }
