@@ -28,8 +28,16 @@ Python version **3.9** needs to be installed on the local machine used for the h
 2. Please clone this GitHub repository to your local system or download the zip by clicking on the green **Code** button, then on the **Download Zip** button and selecting the folder to download the zip to your local machine. Once the repository gets downloaded, extract the zip file by right-clicking on the file and selecting the **Extract** button.
 3. Create the conda virtual environment by running the following command in your terminal from the repository root:
 
+For Windows and Linux users:
+
 ```bash
 conda env create -n tiger_hack -f codes/deploy/conda.yaml
+```
+
+For Mac users:
+
+```bash
+conda env create -n tiger_hack -f codes/deploy/conda_mac.yaml
 ```
 
 ### VSCode

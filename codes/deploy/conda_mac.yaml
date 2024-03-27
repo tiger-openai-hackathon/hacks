@@ -6,4 +6,4 @@ dependencies:
   - pip
   - ipykernel
   - pip:
-      - -r requirements.txt
+      - -r requirements_mac.txt
