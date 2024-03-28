@@ -1,3 +1,12 @@
+# Parameters for the Retriever model (Azure AI search)
+rag:
+  # Index name that is created in Azure AI studio or to be created in the notebook
+  chunk_size: 300
+  chunk_overlap: 20
+  # top_k
+  num_docs: 5
+
+# Prompt that will be used by the generator model (Azure OpenAI)
 prompt:
   system_role: You are a helpful assistant.
   user_prompt: |
@@ -5,11 +14,7 @@ prompt:
     Context: {context}
     Question: {question}
     If you are unable to answer based on the given context, please say "I don't know".
-rag:
-  index_name: "ch3_data"
-  chunk_size: 300
-  chunk_overlap: 20
-  num_docs: 5
+# Model parameters for the generator model (Azure OpenAI)
 model:
   temperature: 0.7
   max_tokens: 800
