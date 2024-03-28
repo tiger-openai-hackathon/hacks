@@ -83,9 +83,10 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 
 ## Launch the Chatbot
 
-1. The code from the notebook is also available as a Python package. Install the package using the command
+1. The code used in the notebook is also available as a Python package in the `codes/src` folder and can be installed in your environment. Activate the conda environment and install the package using the below commands
 
    ``` bash
+   conda activate tiger_hack
    pip install -e codes/
    ```
 
