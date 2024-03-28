@@ -77,9 +77,16 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 
 ## Run the notebook
 
-1. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
-2. Click on Select Kernel and select `tiger_hack` virtual environment
-3. Run the cells in the notebook
+1. Sign in with Azure CLI before starting with running the notebook using the command and complete the login in the browser using the Azure ID that you want to use for the hack. If you are not sure what ID to use, please check with the support team available in the hack
+
+   ```bash
+   az login
+   ```
+
+2. Validate that you are logged in using the correct ID (the previous step prints the ID on your terminal along with other information)
+3. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
+4. Click on Select Kernel and select `tiger_hack` virtual environment
+5. Run the cells in the notebook
 
 ## Launch the Chatbot
 
