@@ -22,11 +22,11 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 
 ### Python Environment
 
-Python version **3.9** needs to be installed on the local machine used for the hack. Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
+Python version **3.9** needs to be installed on the local machine used for the hack. Refer to the instructions below to install Miniconda and create a Python 3.9 environment.
 
-1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
+1. Install Miniconda following the documentation (skip this step if you already have Anaconda or Miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install). If you have Anaconda or Miniconda already installed in your system, you can skip this step.
 2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [download](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view) the [main branch](https://github.com/tiger-openai-hackathon/hacks) of this repository in your local system
-3. For Windows users, it is preferred to add `conda` as a PATH variable
+3. For Windows users, it is preferred to add `conda` as a `PATH` variable. Open a new terminal and try entering the command: `conda`. If you get a message saying "Conda command not recognized", then please add `conda` to `PATH` manually by following the steps in this [link](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/). This is an optional step and can be skipped if you want to use the Anaconda prompt instead of the command prompt during the hack.
 4. Create the conda virtual environment by running the following command in your terminal from the repository root:
 
 For Windows and Linux users:
