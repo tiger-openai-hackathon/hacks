@@ -25,8 +25,9 @@ Windows and Linux are the preferred operating systems for the hack event. They'r
 Python version **3.9** needs to be installed on the local machine used for the hack. Refer to the instructions below to install Miniconda CLI and create a Python 3.9 environment.
 
 1. Install Miniconda following the documentation (skip this step if you already have anaconda or miniconda installed): [https://docs.anaconda.com/free/miniconda/#quick-command-line-install](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
-2. Please clone this GitHub repository to your local system or download the zip by clicking on the green **Code** button, then on the **Download Zip** button and selecting the folder to download the zip to your local machine. Once the repository gets downloaded, extract the zip file by right-clicking on the file and selecting the **Extract** button.
-3. Create the conda virtual environment by running the following command in your terminal from the repository root:
+2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [download](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view) the [main branch](https://github.com/tiger-openai-hackathon/hacks) of this repository in your local system
+3. For Windows users, it is preferred to add `conda` as a PATH variable
+4. Create the conda virtual environment by running the following command in your terminal from the repository root:
 
 For Windows and Linux users:
 
@@ -45,11 +46,7 @@ conda env create -n tiger_hack -f codes/deploy/conda_mac.yaml
 1. If you already have an IDE setup in your system, you can skip this section
 2. Install VSCode from [this website](https://code.visualstudio.com/download)
 3. Install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions from the VSCode marketplace
-
-### Source code
-
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [download](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view) the [main branch](https://github.com/tiger-openai-hackathon/hacks) of this repository in your local system
-2. [Open](https://code.visualstudio.com/docs/editor/workspaces#_how-do-i-open-a-vs-code-workspace) the downloaded Source code folder in the VSCode
+4. [Open](https://code.visualstudio.com/docs/editor/workspaces#_how-do-i-open-a-vs-code-workspace) the downloaded Source code folder in the VSCode
 
 ### Azure CLI
 
@@ -90,7 +87,7 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 
 2. Validate that you are logged in using the correct ID (the previous step prints the ID on your terminal along with other information)
 3. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
-4. Click on Select Kernel and select `tiger_hack` virtual environment
+4. Click on Select Kernel and select `tiger_hack` virtual environment. If you don't see `tiger_hack` in the Python Environments, please reload the VSCode and try again. If you still don't see the `tiger_hack`, please add it manually by locating the path where the environment is created. Please check with the support team available in the hack if you are not sure how to do this.
 5. Run the cells in the notebook
 
 ## Launch the Chatbot
