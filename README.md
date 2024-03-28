@@ -46,6 +46,11 @@ conda env create -n tiger_hack -f codes/deploy/conda_mac.yaml
 2. Install VSCode from [this website](https://code.visualstudio.com/download)
 3. Install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions from the VSCode marketplace
 
+### Source code
+
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [download](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view) the [main branch](https://github.com/tiger-openai-hackathon/hacks) of this repository in your local system
+2. [Open](https://code.visualstudio.com/docs/editor/workspaces#_how-do-i-open-a-vs-code-workspace) the downloaded Source code folder in the VSCode
+
 ### Azure CLI
 
 Azure CLI should be installed on the laptop to provide authentication to the Azure services.
