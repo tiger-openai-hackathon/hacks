@@ -72,11 +72,10 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 1. If you already have Java installed in your system, you can skip this step
 2. Please download and install Java from [this website](https://www.java.com/en/download/manual.jsp)
 
-## Update the configuration files
-Please follow the guide [sdk_user_config_and_env_var_guide](instructions) for environment variable and config.
 
-1. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
-2. Populate AI Studio project variables in [config.json](codes/config.json)
+## Build using AI studio
+Follow the mentioned [guideline](/hacks/instructions/ms_hack_steps_ai_studio.pdf) to build and test RAG using azure AI studio. This step is a prerequisite to run the sdk application.
+
 
 ## Run the notebook
 
@@ -87,12 +86,15 @@ Please follow the guide [sdk_user_config_and_env_var_guide](instructions) for en
    ```
 
 2. Validate that you are logged in using the correct ID (the previous step prints the ID on your terminal along with other information)
-3. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
-4. Click on Select Kernel and select `tiger_hack` virtual environment. If you don't see `tiger_hack` in the Python Environments, please reload the VSCode and try again. If you still don't see the `tiger_hack`, please add it manually by locating the path where the environment is created. Please check with the support team available in the hack if you are not sure how to do this.
-5. Run the cells in the notebook
+3. Update the configuration files. Please follow the guide [sdk_user_config_and_env_var_guide](instructions) for environment variable and config json.
+   a. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
+   b. Populate AI Studio project variables in [config.json](codes/config.json)
+4. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
+5. Click on Select Kernel and select `tiger_hack` virtual environment. If you don't see `tiger_hack` in the Python Environments, please reload the VSCode and try again. If you still don't see the `tiger_hack`, please add it manually by locating the path where the environment is created. Please check with the support team available in the hack if you are not sure how to do this.
+6. Run the cells in the notebook
 
 ## Sample Question
-Sample questions for ch3 data can be found [ch3_data_sample_questions](references) file.
+Sample questions for ch3 data can be found in [ch3_data_sample_questions](references) file.
 
 ## Launch the Chatbot
 
