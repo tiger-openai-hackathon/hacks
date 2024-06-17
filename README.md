@@ -94,7 +94,7 @@ Follow the mentioned [guideline](instructions/ms_hack_steps_ai_studio.pdf) to bu
 6. Run the cells in the notebook
 
 ## Sample Question
-Sample questions for ch3 data can be found in [ch3_data_sample_questions](references) file.
+Sample questions for ch3 data can be found in [ch3_data_sample_questions](references/ch3_data_sample_questions.txt) file.
 
 ## Launch the Chatbot
 
