@@ -74,7 +74,7 @@ Azure CLI should be installed on the laptop to provide authentication to the Azu
 
 
 ## Build using AI studio
-Follow the mentioned [guideline](/hacks/instructions/ms_hack_steps_ai_studio.pdf) to build and test RAG using azure AI studio. This step is a prerequisite to run the sdk application.
+Follow the mentioned [guideline](instructions/ms_hack_steps_ai_studio.pdf) to build and test RAG using azure AI studio. This step is a prerequisite to run the sdk application.
 
 
 ## Run the notebook
@@ -86,7 +86,7 @@ Follow the mentioned [guideline](/hacks/instructions/ms_hack_steps_ai_studio.pdf
    ```
 
 2. Validate that you are logged in using the correct ID (the previous step prints the ID on your terminal along with other information)
-3. Update the configuration files. Please follow the guide [sdk_user_config_and_env_var_guide](instructions) for environment variable and config json.
+3. Update the configuration files. Please follow the guide [sdk_user_config_and_env_var_guide](instructions/sdk_user_config_and_env_var_guide.pdf) for environment variable and config json.
    a. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
    b. Populate AI Studio project variables in [config.json](codes/config.json)
 4. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
