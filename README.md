@@ -86,7 +86,7 @@ Follow the mentioned [guideline](instructions/ms_hack_steps_ai_studio.pdf) to bu
    ```
 
 2. Validate that you are logged in using the correct ID (the previous step prints the ID on your terminal along with other information)
-3. Update the configuration files. Please follow the guide [sdk_user_config_and_env_var_guide](instructions/sdk_user_config_and_env_var_guide.pdf) for environment variable and config json.
+3. Update the configuration files. Please follow the [user guide](instructions/sdk_user_config_and_env_var_guide.pdf) for environment variable and config json.
    a. Populate relevant environment variables in [environment_variables.env](codes/configs/environment_variables.env)
    b. Populate AI Studio project variables in [config.json](codes/config.json)
 4. Open the [end-to-end notebook](codes/notebooks/end_to_end.ipynb) in VSCode
@@ -94,7 +94,7 @@ Follow the mentioned [guideline](instructions/ms_hack_steps_ai_studio.pdf) to bu
 6. Run the cells in the notebook
 
 ## Sample Question
-Sample questions for ch3 data can be found in [ch3_data_sample_questions](references/ch3_data_sample_questions.txt) file.
+Sample questions for ch3 data can be found in [ch3 sample questions](references/ch3_data_sample_questions.txt) file.
 
 ## Launch the Chatbot
 
