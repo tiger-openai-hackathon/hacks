@@ -3,8 +3,8 @@ import yaml
 from dotenv import load_dotenv
 from rag_ai_studio.chat import chat_completion
 
-load_dotenv("configs/environment_variables.env")
 
+load_dotenv("configs/environment_variables.env")
 
 # set streamlit-chat very first intial message in chat history
 def get_initial_message():
@@ -74,7 +74,6 @@ def track_radio_feedback():
 
 st.divider()
 
-
 background_color = "#B8EFF9"  # Use your desired color code
 
 # Add the background color and text inside a div using HTML and CSS
@@ -102,7 +101,7 @@ def update_chat(messages, role, content):
     return messages
 
 
-def main_func():
+def load_view():
     # Sidebar options
     with st.sidebar:
         temperature = st.slider(
@@ -214,5 +213,5 @@ def main_func():
                             args=(thumbs_down,),
                         )
 
-
-main_func()
+if __name__ == "__main__":
+    load_view()
