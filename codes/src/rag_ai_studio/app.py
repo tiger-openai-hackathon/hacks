@@ -103,7 +103,7 @@ def update_chat(messages, role, content):
 
 
 def load_view():
-    standard_reponse = "Please ask a question related to the document."
+    standard_reponse = "Could you ask a question related to the knowledge base"
     # Sidebar options
     with st.sidebar:
         temperature = st.slider(
