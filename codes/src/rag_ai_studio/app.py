@@ -77,8 +77,9 @@ st.divider()
 background_color = "#B8EFF9"  # Use your desired color code
 
 # Add the background color and text inside a div using HTML and CSS
-custom_html = f"""
-<div style="background-color:{background_color}; padding:10px; border-radius:10px; text-align:center;">
+custom_html = """
+</style>
+<div style="background-color: rgb(184,239,249); padding:10px; border-radius:10px; text-align:center;">
     <h1 style="color:Black;"> <span style="font-size: 24px;">Welcome to Azure OpenAI Intelligent Chatbot!</span>
 </div>
 """
@@ -102,6 +103,7 @@ def update_chat(messages, role, content):
 
 
 def load_view():
+    standard_reponse = "Please ask a question related to the document."
     # Sidebar options
     with st.sidebar:
         temperature = st.slider(
@@ -139,19 +141,20 @@ def load_view():
             )
 
     # Displaying old messages
-    with st.spinner("generating..."):
-        messages = st.session_state["messages"]
-        # messages = update_chat(messages, "user", query)
-        for message_ in messages:
-            if message_["role"] == "user":
-                with st.chat_message("user"):
-                    st.markdown(message_["content"])
-            if message_["role"] == "assistant":
-                result = message_["content"]
-                answer = result["choices"][0]["message"]["content"]
-                contexts = result["choices"][0]["context"]["contexts"]
-                with st.chat_message("assistant"):
-                    st.markdown(answer)
+    
+    messages = st.session_state["messages"]
+    # messages = update_chat(messages, "user", query)
+    for message_ in messages:
+        if message_["role"] == "user":
+            with st.chat_message("user"):
+                st.write(message_["content"])
+        if message_["role"] == "assistant":
+            result = message_["content"]
+            answer = result["choices"][0]["message"]["content"]
+            contexts = result["choices"][0]["context"]["contexts"]
+            with st.chat_message("assistant"):
+                st.write(answer)
+                if standard_reponse not in answer:
                     for idx, context in enumerate(contexts):
                         with st.expander(label=f"Reference {idx+1}"):
                             st.write(context)
@@ -166,6 +169,7 @@ def load_view():
             st.session_state["track_radio_feedback"] = False
             st.session_state["submit_feedback_state"] = False
             # Get response
+
             result = chat_completion(
                 question=query,
                 system_role=st.session_state["model_config"]["prompt"]["system_role"],
@@ -181,13 +185,15 @@ def load_view():
             st.session_state["messages"] = messages
             answer = result["choices"][0]["message"]["content"]
             contexts = result["choices"][0]["context"]["contexts"]
+        
             with st.chat_message("user"):
-                st.markdown(query)
+                st.write(query)
             with st.chat_message("assistant"):
-                st.markdown(answer)
-                for idx, context in enumerate(contexts):
-                    with st.expander(label=f"Reference {idx+1}"):
-                        st.write(context)
+                st.write(answer)
+                if standard_reponse not in answer:
+                    for idx, context in enumerate(contexts):
+                        with st.expander(label=f"Reference {idx+1}"):
+                            st.write(context)
 
             with st.form("current_form"):
                 col1, col2 = st.columns([3, 1])
