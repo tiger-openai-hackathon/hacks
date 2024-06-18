@@ -1,20 +1,26 @@
-# Parameters for the Retriever model (Azure AI search)
-rag:
-  # Index name that is created in Azure AI studio or to be created in the notebook
-  chunk_size: 300
-  chunk_overlap: 20
-  # top_k
-  num_docs: 5
-
-# Prompt that will be used by the generator model (Azure OpenAI)
+model:
+  max_tokens: 800
+  temperature: 0.7
 prompt:
   system_role: You are a helpful assistant.
-  user_prompt: |
-    Provide me answer based on the below context.
+  user_prompt: 'Answer the query based on the context provided below.
+
+
     Context: {context}
+
     Question: {question}
-    If you are unable to answer based on the given context, please say "I don't know".
-# Model parameters for the generator model (Azure OpenAI)
-model:
-  temperature: 0.7
-  max_tokens: 800
+
+
+    Follow the below mentioned guidelines while generating response:
+
+    1. If you are unable to answer based on the given context, please say "How may I help you, Could you ask a question related to the knowledge base".
+
+    2. If the question is a greetings, please say "How may I help you, Could you ask a question related to the knowledge base".
+
+    3. If answer is found in the context, elaborate the response.
+
+    '
+rag:
+  chunk_overlap: 20
+  chunk_size: 300
+  num_docs: 5
