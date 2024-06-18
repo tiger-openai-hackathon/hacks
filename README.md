@@ -112,9 +112,9 @@ Sample questions for ch3 data can be found in [ch3 sample questions](references/
    streamlit run src/rag_ai_studio/app.py
    ```
 
-We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/058CMXnXu6). You can also scan the QR code below to provide your feedback:
+We greatly value your feedback and welcome any suggestions for improvement. Please share your thoughts [here](https://forms.office.com/r/yhjtPtAFxy). You can also scan the QR code below to provide your feedback:
 
-[![feedback form](codes/images/README/feedback.png "Feedback form")](https://forms.office.com/r/058CMXnXu6)
+[![feedback form](codes/images/README/hack_feedback_24_QR.png "Feedback form")](https://forms.office.com/r/yhjtPtAFxy)
 
 If you have any questions, please feel free to get in touch with us at <tigernlp@tigeranalytics.com>
 
